@@ -6,6 +6,7 @@ class YmlLogin extends Component {
       this.state = {
          username: '',
          email: '',
+         password: '',
       };
    }
 
@@ -28,7 +29,7 @@ class YmlLogin extends Component {
    render() {
       return(
          <form onSubmit={this.handleSubmit}>
-            Username:
+            {/*Username:
             <br/>
             <input
                type="text"
@@ -36,15 +37,28 @@ class YmlLogin extends Component {
                value={this.state.username}
                onChange={this.handleChange}
                placeholder='yoshino123'/>
-            <br/>
+            <br/>*/}
             Email:
             <br/>
             <input
                type="text"
                name="email"
                value={this.state.email}
+               onChange={this.handleChange}/>
+            <br/>
+            Password:
+            <br/>
+            <input
+               type="text"
+               name="password"
+               value={this.state.password}
                onChange={this.handleChange}
-               placeholder='example@email.com'/>
+            />
+            <br/> 
+            <input
+               type="submit"
+               value="Login"
+            />
          </form>
       );
    }
