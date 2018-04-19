@@ -1,5 +1,63 @@
 import React, { Component } from 'react';
 
+const InputUsername = (props) => {
+   return(
+      <input
+         type="text"
+         name="username"
+         value={props.value}
+         onChange={props.onChange}/>
+   );
+}
+
+const InputEmail = (props) => {
+   return(
+      <span>
+         <input
+            type="text"
+            name="email"
+            value={props.value}
+            onChange={props.onChange}/>
+         <br/>
+      </span>
+   );
+}
+
+const InputPassword = (props) => {
+   return(
+      <span>
+         <input
+            type="text"
+            name="password"
+            value={props.value}
+            onChange={props.onChange}/>  
+         <br/> 
+      </span>
+   );
+}
+
+const LoginForm = (props) => {
+   return(
+      <form onSubmit={props.onSubmit}>
+         Email:
+         <InputEmail
+            value={props.email}
+            onChange={props.onChange}
+         />
+         Password:
+         <InputPassword 
+            value={props.password}
+            onChange={props.onChange}
+         />
+         <input
+            type="submit"
+            value="Login"
+         />
+      </form>
+   );
+
+}
+
 class YmlLogin extends Component {
    constructor(props) {
       super(props);
@@ -28,38 +86,12 @@ class YmlLogin extends Component {
 
    render() {
       return(
-         <form onSubmit={this.handleSubmit}>
-            {/*Username:
-            <br/>
-            <input
-               type="text"
-               name="username"
-               value={this.state.username}
-               onChange={this.handleChange}
-               placeholder='yoshino123'/>
-            <br/>*/}
-            Email:
-            <br/>
-            <input
-               type="text"
-               name="email"
-               value={this.state.email}
-               onChange={this.handleChange}/>
-            <br/>
-            Password:
-            <br/>
-            <input
-               type="text"
-               name="password"
-               value={this.state.password}
-               onChange={this.handleChange}
-            />
-            <br/> 
-            <input
-               type="submit"
-               value="Login"
-            />
-         </form>
+         <LoginForm
+            onSubmit={this.handleSubmit}
+            email={this.state.email}
+            password={this.state.password}
+            onChange={this.handleChange}
+         />
       );
    }
 }

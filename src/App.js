@@ -1,9 +1,31 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 import YmlProfile from './components/users/ymlprofilepage/YmlProfilePage'
 import YmlLogin from './components/users/YmlLogin'
+
+/*
+const Topic = ({match}) => {
+  <div>
+    <h3>{match.params.topicId}</h3>
+  </div>
+}
+
+
+const Topics = ({match}) => {
+  <div>
+    <h2>Topics</h2>
+    <ul>
+      
+    </ul>
+  </div>
+}*/
 
 class App extends Component {
   render() {
